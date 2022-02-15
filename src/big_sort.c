@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:34:15 by afaustin          #+#    #+#             */
-/*   Updated: 2022/02/15 01:31:30 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/02/15 02:03:26 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	sort_and_push_back_to_a(t_stacks *stacks)
 	if (count < stacks->stack_size - stacks->min_base)
 	{
 		index = stacks->stack_size;
-		while (--index > stop)
+		while (--index >= stop)
 		{
 			send_to_top_b(stacks, index);
 			pa(stacks);
