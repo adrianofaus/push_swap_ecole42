@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:35:00 by afaustin          #+#    #+#             */
-/*   Updated: 2022/02/14 22:34:18 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/02/15 13:45:55 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,19 @@ static void	mark_initialize(t_stacks *stacks)
 	stacks->stack_a = start;
 }
 
+static void	refresh_max_values(t_stacks *stacks)
+{
+	int	i;
+
+	i = 0;
+	while (i < stacks->groups)
+	{
+		if ((stacks->stack_a->index <= stacks->max_values[i] && !i) || (stacks->stack_a->index <= stacks->max_values[i] && stacks->max_values[--i]))
+			stacks->max_values[i]--;
+		i++;
+	}
+}
+
 static void	put_mark(t_stacks *stacks, t_marks mark_up)
 {
 	int			i;
@@ -87,6 +100,7 @@ static void	put_mark(t_stacks *stacks, t_marks mark_up)
 	start = stacks->stack_a;
 	stacks->stack_a = mark_up.node;
 	stacks->stack_a->stay = 1;
+	refresh_max_values(stacks);
 	tmp = mark_up.node->next;
 	while (i < stacks->stack_size)
 	{
@@ -96,6 +110,7 @@ static void	put_mark(t_stacks *stacks, t_marks mark_up)
 		{
 			stacks->stack_a = tmp;
 			stacks->stack_a->stay = 1;
+			refresh_max_values(stacks);
 		}
 		i++;
 		tmp = tmp->next;
