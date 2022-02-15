@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:34:15 by afaustin          #+#    #+#             */
-/*   Updated: 2022/02/15 02:03:26 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/02/15 02:34:07 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,14 @@ static void	sorting_groups(t_stacks *stacks)
 	initialise_counts(&count, stacks);
 	while (total_elements < (stacks->stack_size - stacks->min_base))
 	{
-		if (stacks->stack_a->index <= stacks->max_values[count.small_group] && stacks->stack_a->stay == FALSE)
+		if (stacks->stack_a->index <= stacks->max_values[count.small_group])
 		{
-			count.rbs = send_small_element_to_b(count.rbs, stacks);
+			if (stacks->stack_a->stay == FALSE)
+			{
+				count.rbs = send_small_element_to_b(count.rbs, stacks);
+				total_elements++;
+			}
 			count.small_elements++;
-			total_elements++;
 		}
 		else if (stacks->stack_a->index <= stacks->max_values[count.big_group]
 			&& stacks->stack_a->index > stacks->max_values[count.big_group - 1] && stacks->stack_a->stay == FALSE)
