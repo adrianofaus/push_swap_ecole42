@@ -6,11 +6,13 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:34:55 by afaustin          #+#    #+#             */
-/*   Updated: 2022/02/14 12:34:59 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/02/15 01:20:45 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+#include <stdio.h>
 
 void	sort(t_stacks *stacks)
 {
@@ -43,6 +45,11 @@ int	main(int argc, char **argv)
 			if (!is_sorted_asc(stacks.stack_a))
 			{
 				push_swap(&stacks);
+				for (t_doubly_list	*tmp = stacks.stack_a; tmp != NULL; tmp = tmp->next)
+				{
+					printf("%d ", tmp->content);
+				}
+
 			}
 			free_stacks(&stacks);
 		}

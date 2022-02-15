@@ -6,7 +6,7 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:34:15 by afaustin          #+#    #+#             */
-/*   Updated: 2022/02/15 00:58:09 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/02/15 01:31:30 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ static void	put_at_first(t_stacks *stacks)
 	{
 		if (tmp->next != NULL && tmp->index < tmp->next->index)
 			i++;
-		if (tmp->index > tmp->next->index)
+		if (tmp->next != NULL && tmp->index > tmp->next->index)
 			flag = 1;
 		tmp = tmp->next;
 	}
