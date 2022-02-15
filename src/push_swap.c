@@ -6,13 +6,11 @@
 /*   By: afaustin <afaustin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:34:55 by afaustin          #+#    #+#             */
-/*   Updated: 2022/02/15 01:46:53 by afaustin         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:34:59 by afaustin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-#include <stdio.h>
 
 void	sort(t_stacks *stacks)
 {
