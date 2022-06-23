@@ -1,3 +1,5 @@
+![push_swape](https://user-images.githubusercontent.com/63206471/175189112-d98c76d9-a08c-4e4e-98b6-6837ee5bbbbb.png)
+
 # Push_Swap
 
 * [Introduction](#introduction)
