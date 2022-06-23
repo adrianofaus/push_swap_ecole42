@@ -7,36 +7,17 @@
 * [The Project](#the-project)
 
 ## Introduction
-This project made me understand a bit deeper two concepts that I already knew: the redirections and the pipes. This was an introductory project.
+The Push swap project is an algorithm project where data must be sorted. There is a set of integer values, 2 stacks, and a set of instructions to manipulate both stacks. The goal was write a program in C called push_swap which calculates and displays on the STDOUT the smallest program, made of push swap language instructions, that sorts the integers received as arguments.
 
 ## Skills that I have improved
-* Imperative programming
-* Unix logic
-
-## The Project
-In order to succeed in doing this project I had to master the following:
-* Manage forks and child proccesses
-* Manage pipes
-* Manage file descriptors
-* How to execute programs inside another program 
+* Sorting algorithms
+* Battery concept and handling elements
+* Algorithm implementation
 
 ### What are my thoughts about the project?
-Pipex is a important step in the journey to become a great software engineer. The biggest challenge that I had during this project was to learn how child processes work and how to redirect inputs and outputs. If you don't manage pipes and file descriptors correctly the result is always weird and difficult do debug. 
-What I loved about pipex is that I could learn how to automatize the execution of a program inside my code, this was like an inception for me.
 
 ### Workflow
 
 
 ### How to run it?
 
-```
-1 - make or make bonus
-2 - Example => ./pipex file1 cmd1 cmd2 cmd3 ... cmdn file2
-It should behave like:
-< file1 cmd1 | cmd2 | cmd3 ... | cmdn > file2
-
-You can also run with here_doc
-Example =>  ./pipex here_doc LIMITER cmd1 cmd2 ... cmdn file
-IT should behave like:
-cmd << LIMITER | cmd1 >> file
-```
